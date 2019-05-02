@@ -1,0 +1,81 @@
+<!-- ########################################################################### -->
+<!-- Applcation: Belly Button Biodiversity                                       -->
+<!-- Author: Rod Skoglund                                                        -->
+<!-- File: Index.html                                                            -->
+<!-- Description: Provides the template html page tht will be used to format and -->
+<!--              display the data                                               -->
+<!-- ########################################################################### -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Flask Plotlyjs Application</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <!-- ************************************************************************* -->
+  <!-- Container for Metadata and Pie Chart display                              -->
+  <!-- ************************************************************************* -->
+  <div class="container">
+    <!-- *********************************************************************** -->
+    <!-- Row to display Jumbotron Header                                         -->
+    <!-- *********************************************************************** -->
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center" style="background-color: blue; color: yellow;">
+        <h1>Belly Button Biodiversity Dashboard</h1>
+        <p>Use the interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+    <!-- *********************************************************************** -->
+    <!-- Row to display drop down sample selection, Metadata and Pie Chart       -->
+    <!-- *********************************************************************** -->
+    <div class="row">
+      <!-- <div class="col-md-2"> -->
+      <div class="col-md-3">
+        <div class="well">
+          <h5>SELECT Sample:</h5>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Sample MetaData</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <!-- <div class="col-md-5"> -->
+      <div class="col-md-9">
+        <div id="pie"></div>
+      </div>
+      <!-- <div class="col-md-5">
+        <div id="gauge"></div>
+      </div> -->
+    </div>
+  </div>
+  <!-- ************************************************************************* -->
+  <!-- Row to display Bubble Chart.                                              -->
+  <!-- ************************************************************************* -->
+  <div class="row">
+    <div class="col-md-12">
+      <div id="bubble"></div>
+    </div>
+  </div>
+
+  <!-- ************************************************************************* -->
+  <!-- Import scripts for D3, Plotly and the application code. Bonus code is a   -->
+  <!--   placeholder in case it is developed later                               -->
+  <!-- ************************************************************************* -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- <script src="{{ url_for('static', filename='js/bonus.js') }}"></script> -->
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+
+</html>
